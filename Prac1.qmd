@@ -1,0 +1,23 @@
+---
+title: "Practical One"
+format: html
+---
+
+## Question 1:
+Finding all the rows with missing values from the "airquality" dataset
+
+```{r}
+class(airquality)
+
+airquality_with_missingvalues <<- airquality[
+  is.na(airquality$Ozone) | is.na(airquality$Solar.R) | 
+    is.na(airquality$Wind) | is.na(airquality$Temp) | 
+    is.na(airquality$Month) | is.na(airquality$Day),]
+
+print(airquality_with_missingvalues)
+
+write.csv(airquality_with_missingvalues, file = "_raw_data/dataset.csv") #saving our manipulated data 
+
+```
+
+
