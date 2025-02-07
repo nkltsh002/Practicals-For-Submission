@@ -44,5 +44,40 @@ temp_max <- max(airquality_with_missingvalues$Temp)
 temp_max
 ```
 
+## Question 3:
+Estimating the parameters for linear regression model (distance\~speed) from the cars data set
+
+```{r}
+y_matrix <- cars$dist
+x_matrix <- cbind(1, cars$speed)
+
+linear_reg <- function(x, y) {
+  num_observations <- nrow(x)
+  num_variables <- ncol(x)
+
+  beta_hat <- solve(t(x) %*% x) %*% t(x) %*% y  # beta estimate 
+
+  regression_residuals <- y - x %*% beta_hat
+
+  rss <- t(regression_residuals) %*% regression_residuals  # residual sum of squares
+
+  regression_variance <- as.numeric(rss) / (num_observations - num_variables)  
+
+  standard_errors <- sqrt(diag(regression_variance * solve(t(x) %*% x)))  
+
+  t_stats <- beta_hat / standard_errors  
+
+  p_vals <- 2 * (1 - pt(abs(t_stats), num_observations - num_variables))
+
+  return(list(
+    "beta estimates:" = beta_hat, 
+    "estimate standard errors:" = standard_errors, 
+    "t statistics:" = t_stats, 
+    "P-values:" = p_vals
+  ))
+}
+
+linear_reg(x_matrix, y_matrix)
+```
 
 
