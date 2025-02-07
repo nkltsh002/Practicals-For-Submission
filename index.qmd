@@ -1,11 +1,30 @@
 ---
 title: "Practicals For Submission"
+author: "Tshwanelo Nkalanga"
 ---
 
-## Quarto
+# Practical One:
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Instructions
 
-```{r}
-1 + 1
-```
+The answers to the following questions should be placed into their own QMD files in a Quarto project on GitHub.
+
+## Contents
+
+-   **Question 1: Handling Missing Values**
+
+    -   Find all rows in the `airquality` dataset that have missing values.
+
+-   **Question 2: Descriptive Statistics**
+
+    -   Compute mean, standard deviation, minimum, and maximum for temperature and ozone levels in `airquality`.
+
+-   **Question 3:** **Matrix Calculations**
+
+    -   Calculating the beta estimates, t-statistic, and p-value for a linear regression fitted with the `cars` data set
+
+-   **Question 4: Linear Regression**
+
+    -   Fit a simple linear regression model to the `cars` data set
+
+    -   Compare the estimates with those obtained from question 3.
