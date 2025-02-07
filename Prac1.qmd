@@ -80,4 +80,11 @@ linear_reg <- function(x, y) {
 linear_reg(x_matrix, y_matrix)
 ```
 
+## Question 4:
+Checking the results from questions 3
+
+```{r}
+reg_model <- lm(dist~speed, data = cars)
+summary(reg_model)
+```
 
