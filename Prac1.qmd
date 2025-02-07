@@ -17,7 +17,32 @@ airquality_with_missingvalues <<- airquality[
 print(airquality_with_missingvalues)
 
 write.csv(airquality_with_missingvalues, file = "_raw_data/dataset.csv") #saving our manipulated data 
-
 ```
+
+## Question 2:
+Finding mean, sd, min, max for each of temperature and ozone level
+
+```{r}
+airquality_with_missingvalues <- read.csv("_raw_data/dataset.csv")
+  
+ozone_mean <- mean(airquality_with_missingvalues$Ozone, na.rm = TRUE)
+ozone_mean
+ozone_sd <- sd(airquality_with_missingvalues$Ozone, na.rm = TRUE)
+ozone_sd
+ozone_min <- min(airquality_with_missingvalues$Ozone, na.rm = TRUE)
+ozone_min
+ozone_max <- max (airquality_with_missingvalues$Ozone, na.rm = TRUE)
+ozone_max
+  
+temp_mean <- mean(airquality_with_missingvalues$Temp)
+temp_mean
+temp_sd <- sd(airquality_with_missingvalues$Temp)
+temp_sd
+temp_min <- min(airquality_with_missingvalues$Temp)
+temp_min
+temp_max <- max(airquality_with_missingvalues$Temp)
+temp_max
+```
+
 
 
