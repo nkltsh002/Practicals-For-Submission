@@ -1,0 +1,119 @@
+---
+title: "Practical 2"
+format: html
+---
+
+## Question 1:
+
+Generating simulated data
+
+```{r}
+set.seed(1)
+
+errors <- rnorm(100, mean = 0 , sd = 0.2)
+
+x <- (1:100)
+y <- integer(100)
+
+y_function <- function(a, b){
+  # A function that generates all the "y" values 
+  #
+  # Input:
+  #   a - the "x" input value
+  #   b - the "error term" associated with that value
+  #
+  # Output:
+  #   y value 
+  
+  return(sin(a/10)+b)
+}
+
+for (i in 1:100) {
+  y[i] <- y_function(x[i], errors[i])
+}
+
+write.csv(x, file = "_raw_data/Prac2_xvalues.csv") #saving our x
+write.csv(y, file = "_raw_data/Prac2_yvalues.csv") #saving our y
+write.csv(errors, file = "_raw_data/Prac2_error_values.csv") #saving our errors
+```
+
+## Question 2:
+
+```{r}
+
+distance_matrix <- matrix(0, 100, 100)
+
+euclidean_distance_matrix <- function(x, y) {  
+  # A function to compute pairwise Euclidean distances
+  #
+  # Inputs:
+  #   x - is the x coordinate vector
+  #   y - is the y coordinate vector
+  #
+  # Output:
+  #   distance matrix
+
+  for (i in 1:100) {
+    for (j in 1:100) {
+      distance_matrix[i, j] <- sqrt((x[i] - x[j])^2 + (y[i] - y[j])^2)
+    }
+  }
+  return(distance_matrix)
+} 
+
+find_k_smallest <- function(i, d, k) {
+  # A function that extracts the i'th row from the symmetric matrix 
+  # and returns a list of the k smallest values
+  #
+  # Inputs:
+  #   i - is the data point
+  #   d - is the symmetric matrix
+  #   k - is the number of points that should be returned
+  #
+  # Output:
+  #   indice vector with the k nearest values
+  
+  
+  row_values <- d[i, ]
+  
+  
+  ordered_values <- order(row_values)
+  
+ 
+  k_smallest_values <- ordered_indices[2:k+1]
+  
+  
+  indices <- which(row_values %in% k_smallest_values)
+  
+  
+  return(indices)
+}
+
+ 
+euclidean_distance_matrix(x, y)
+
+customLowess <- function (x_demo , y_demo, f_demo){
+  k <- ceiling(f_demo*100)
+  
+  d <- euclidean_distance_matrix(x_demo, y_demo)
+  
+  nearest_k_matrix <- matrix(0, nrow = 100, byrow = TRUE )
+  for (i in 1:100){
+    nearest_k_matrix[i] <- find_k_smallest(i, d, k)
+  }
+  
+  weights_matrix <- matrix(0, nrow = 100, byrow = TRUE )
+  for (i in 1:100) {
+      for (j in 1:k) {
+        weights_matrix[i,j] <- (1 - (abs(x[i] - x[j])
+                                     /d[i, nearest_k_matrix[k]])^3
+                                )^3
+      
+    }
+    
+  }
+  
+}
+
+
+```
