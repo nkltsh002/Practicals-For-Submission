@@ -39,81 +39,152 @@ write.csv(errors, file = "_raw_data/Prac2_error_values.csv") #saving our errors
 
 ## Question 2:
 
+Building my own Lowess function
+
 ```{r}
 
-distance_matrix <- matrix(0, 100, 100)
-
-euclidean_distance_matrix <- function(x, y) {  
-  # A function to compute pairwise Euclidean distances
+pairwise_distance <- function(x) {
+  # Computes a matrix of absolute differences between x–values.
   #
-  # Inputs:
-  #   x - is the x coordinate vector
-  #   y - is the y coordinate vector
+  # Args:
+  #   x: A numeric vector.
   #
-  # Output:
-  #   distance matrix
-
-  for (i in 1:100) {
-    for (j in 1:100) {
-      distance_matrix[i, j] <- sqrt((x[i] - x[j])^2 + (y[i] - y[j])^2)
+  # Returns:
+  #   A symmetric matrix D where D[i, j] = |x[i] - x[j]|.
+  
+  n <- length(x)
+  D <- matrix(0, n, n)  # Initialize an n x n matrix
+  
+  for (i in 1:n) {
+    for (j in 1:n) {
+      D[i, j] <- abs(x[i] - x[j])
     }
   }
-  return(distance_matrix)
-} 
-
-find_k_smallest <- function(i, d, k) {
-  # A function that extracts the i'th row from the symmetric matrix 
-  # and returns a list of the k smallest values
-  #
-  # Inputs:
-  #   i - is the data point
-  #   d - is the symmetric matrix
-  #   k - is the number of points that should be returned
-  #
-  # Output:
-  #   indice vector with the k nearest values
-  
-  
-  row_values <- d[i, ]
-  
-  
-  ordered_values <- order(row_values)
-  
- 
-  k_smallest_values <- ordered_indices[2:k+1]
-  
-  
-  indices <- which(row_values %in% k_smallest_values)
-  
-  
-  return(indices)
+  return(D)
 }
 
- 
-euclidean_distance_matrix(x, y)
 
-customLowess <- function (x_demo , y_demo, f_demo){
-  k <- ceiling(f_demo*100)
+
+find_k_nearest <- function(i, D, k) {
+  # Finds the indices of the k nearest neighbors (excluding the point itself)
+  # for the i-th observation based on the distance matrix D.
+  #
+  # Args:
+  #   i: Index of the target observation.
+  #   D: An n x n distance matrix (typically from pairwise_distance).
+  #   k: The number of neighbors to select.
+  #
+  # Returns:
+  #   A vector of indices corresponding to the k nearest neighbors of x[i].
   
-  d <- euclidean_distance_matrix(x_demo, y_demo)
+  row_distances <- D[i, ]
   
-  nearest_k_matrix <- matrix(0, nrow = 100, byrow = TRUE )
-  for (i in 1:100){
-    nearest_k_matrix[i] <- find_k_smallest(i, d, k)
-  }
+  # Order indices in increasing order of distance
+  ordered_indices <- order(row_distances)
   
-  weights_matrix <- matrix(0, nrow = 100, byrow = TRUE )
-  for (i in 1:100) {
-      for (j in 1:k) {
-        weights_matrix[i,j] <- (1 - (abs(x[i] - x[j])
-                                     /d[i, nearest_k_matrix[k]])^3
-                                )^3
-      
+  # The first index is i itself (distance = 0), so we take the next k indices.
+  nearest_indices <- ordered_indices[2:(k + 1)]
+  return(nearest_indices)
+}
+ 
+
+customLowess <- function(x, y, f) {
+  # Performs LOWESS smoothing on (x, y) data using a fixed fraction f of neighbors.
+  #
+  # Args:
+  #   x: Numeric vector of independent variable values.
+  #   y: Numeric vector of dependent variable values.
+  #   f: Fraction (span) of points to use for local regression (default is 0.3).
+  #
+  # Returns:
+  #   A data frame with the original x values and the corresponding smoothed (fitted) y values.
+  
+  n <- length(x)
+  k <- ceiling(f * n)  # Determine the number of neighbors based on fraction f
+  
+  # Compute the pairwise distance matrix for x-values only.
+  D <- pairwise_distance(x)
+  
+  # Initialize vector to hold the fitted (smoothed) y values.
+  fitted <- numeric(n)
+  
+  # Loop over each data point to compute its LOWESS estimate.
+  for (i in 1:n) {
+    # Obtain the indices of the k nearest neighbors (excluding x[i] itself)
+    neighbors <- find_k_nearest(i, D, k)
+    
+    # Determine the bandwidth h as the maximum distance among these neighbors.
+    h <- max(D[i, neighbors])
+    
+    # Compute tricube weights for these neighbors:
+    #   w[j] = (1 - (|x[i]-x[j]| / h)^3)^3   for each neighbor j.
+    weights <- numeric(length(neighbors))
+    for (j in seq_along(neighbors)) {
+      dist_ij <- D[i, neighbors[j]]
+      weights[j] <- (1 - (dist_ij / h)^3)^3
     }
     
+    # Normalize weights so that they sum to 1.
+    weights <- weights / sum(weights)
+    
+    # Compute the weighted average of y using the selected neighbors.
+    fitted[i] <- sum(weights * y[neighbors])
   }
   
+  # Return the results as a data frame.
+  result <- data.frame(x = x, fitted = fitted)
+  return(result)
 }
 
+```
 
+## Question 3:
+
+Comparing R's built in Lowess Function to the "customLowess Function" and plotting both the smoothing values for comparison
+
+```{r}
+# Custom LOWESS (your user-defined function; ensure it is in your workspace)
+result1 <- customLowess(x, y, f = 0.3)
+
+# Built-in lowess from R (note: iter = 0 means no robust iterations)
+result2 <- lowess(x, y, f = 0.3, iter = 0)
+```
+
+```{r}
+#| echo: false
+
+library(graphics)
+
+plot(x, y,
+     main = "LOWESS Smoothing Comparison",  # Title of the plot
+     xlab = "X Values",                       # X-axis label
+     ylab = "Y Values",                       # Y-axis label
+     pch = 16,                                # Solid circle for points
+     col = "darkgray",                        # Color for raw data points
+     cex = 1.2,                               # Increase point size
+     cex.main = 1.5,                          # Increase title size
+     cex.lab = 1.3,                           # Increase axis label size
+     cex.axis = 1.2)                          # Increase axis annotation size
+
+# Add the custom LOWESS smoothed curve (in red, solid line)
+lines(result1$x, result1$fitted, 
+      col = "red", 
+      lwd = 2)
+
+# Add the built-in lowess smoothed curve (in blue, dashed line)
+lines(result2$x, result2$y, 
+      col = "blue", 
+      lwd = 2, 
+      lty = 2)
+
+# Add a legend to the bottom right corner
+legend("bottomright",
+       legend = c("Raw Data", "Custom LOWESS", "Built-in LOWESS"),
+       col = c("darkgray", "red", "blue"),
+       pch = c(16, NA, NA),     # Only raw data points have symbols
+       lty = c(NA, 1, 2),        # Line types: solid for custom, dashed for built-in
+       lwd = c(NA, 2, 2),        # Line widths for the smoothed curves
+       pt.cex = 0.6,             # Symbol size in legend
+       cex = 0.7,                # Text size in legend
+       bty = "y")                # Border around the legend
 ```
