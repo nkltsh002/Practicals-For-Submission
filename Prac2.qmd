@@ -1,35 +1,53 @@
 ---
-title: "Practical 2"
+title: "Practical 2/Lowess Practical"
 format: html
 ---
 
 ## Question 1:
 
-Generating simulated data
+### Instructions:
+
+Generate Simulated Data:
+
+-   Set your seed to 1, i.e. `set.seed(1)`.
+
+-   Create 𝒙 as a sequence of numbers from 1 to 100.
+
+-   Generate 𝒚 as a noisy sine wave such that:
+
+    𝑦𝑖=sin(𝑥𝑖10)+𝑒𝑖
+
+    where ei∼N(0,0.22)
+
+### Answer:
 
 ```{r}
 set.seed(1)
 
-errors <- rnorm(100, mean = 0 , sd = 0.2)
-
 x <- (1:100)
+
 y <- integer(100)
+
+errors <- rnorm(100, mean = 0 , sd = 0.2)
 
 y_function <- function(a, b){
   # A function that generates all the "y" values 
   #
-  # Input:
+  # Args:
   #   a - the "x" input value
   #   b - the "error term" associated with that value
   #
-  # Output:
+  # Return:
   #   y value 
   
   return(sin(a/10)+b)
+  
 }
 
 for (i in 1:100) {
+  
   y[i] <- y_function(x[i], errors[i])
+  
 }
 
 write.csv(x, file = "_raw_data/Prac2_xvalues.csv") #saving our x
@@ -39,30 +57,40 @@ write.csv(errors, file = "_raw_data/Prac2_error_values.csv") #saving our errors
 
 ## Question 2:
 
-Building my own Lowess function
+### Instructions:
+
+Implement the LOWESS Algorithm:
+
+-   Define a function `customLowess(x, y, f)` that returns the smoothed values.
+
+### Answer:
 
 ```{r}
-
 pairwise_distance <- function(x) {
   # Computes a matrix of absolute differences between x–values.
   #
   # Args:
-  #   x: A numeric vector.
+  #   x - A numeric vector.
   #
   # Returns:
   #   A symmetric matrix D where D[i, j] = |x[i] - x[j]|.
   
-  n <- length(x)
-  D <- matrix(0, n, n)  # Initialize an n x n matrix
+  num_obs <- length(x)
   
-  for (i in 1:n) {
-    for (j in 1:n) {
+  D <- matrix(0, num_obs, num_obs)  # Initialize an n x n matrix
+  
+  for (i in 1:num_obs) {
+    
+    for (j in 1:num_obs) {
+      
       D[i, j] <- abs(x[i] - x[j])
+      
     }
+    
   }
+  
   return(D)
 }
-
 
 
 find_k_nearest <- function(i, D, k) {
@@ -70,20 +98,19 @@ find_k_nearest <- function(i, D, k) {
   # for the i-th observation based on the distance matrix D.
   #
   # Args:
-  #   i: Index of the target observation.
-  #   D: An n x n distance matrix (typically from pairwise_distance).
-  #   k: The number of neighbors to select.
+  #   i - Index of the targeted observation.
+  #   D - The symmetric matrix difference D .
+  #   k - The number of neighbors to select.
   #
   # Returns:
   #   A vector of indices corresponding to the k nearest neighbors of x[i].
   
   row_distances <- D[i, ]
   
-  # Order indices in increasing order of distance
   ordered_indices <- order(row_distances)
   
-  # The first index is i itself (distance = 0), so we take the next k indices.
-  nearest_indices <- ordered_indices[2:(k + 1)]
+  nearest_indices <- ordered_indices[2:(k + 1)]    # The first index is i itself (distance = 0), so we take the next k indices.
+  
   return(nearest_indices)
 }
  
@@ -92,50 +119,55 @@ customLowess <- function(x, y, f) {
   # Performs LOWESS smoothing on (x, y) data using a fixed fraction f of neighbors.
   #
   # Args:
-  #   x: Numeric vector of independent variable values.
-  #   y: Numeric vector of dependent variable values.
-  #   f: Fraction (span) of points to use for local regression (default is 0.3).
+  #   x - Numeric vector of independent variable values.
+  #   y - Numeric vector of dependent variable values.
+  #   f - Fraction (span) of points to use for local regression (default is 0.3).
   #
   # Returns:
-  #   A data frame with the original x values and the corresponding smoothed (fitted) y values.
+  #   A data frame with the original x values and the corresponding smoothed y_hat values.
   
-  n <- length(x)
-  k <- ceiling(f * n)  # Determine the number of neighbors based on fraction f
+  num_obs <- length(x)
   
-  # Compute the pairwise distance matrix for x-values only.
+  k <- ceiling(f * num_obs)  
+  
   D <- pairwise_distance(x)
   
-  # Initialize vector to hold the fitted (smoothed) y values.
-  fitted <- numeric(n)
+  y_hat <- numeric(num_obs)  # Initialize vector to hold the y_hat (smoothed) y values.
   
-  # Loop over each data point to compute its LOWESS estimate.
-  for (i in 1:n) {
-    # Obtain the indices of the k nearest neighbors (excluding x[i] itself)
-    neighbors <- find_k_nearest(i, D, k)
+  for (i in 1:num_obs) {
+   
+    k_nearest_neighbors <- find_k_nearest(i, D, k)
+
+    d_max <- max(D[i, (k_nearest_neighbors)])
     
-    # Determine the bandwidth h as the maximum distance among these neighbors.
-    h <- max(D[i, neighbors])
+    weights <- numeric(length(k_nearest_neighbors))   # Initialize vector to hold the weights
     
-    # Compute tricube weights for these neighbors:
-    #   w[j] = (1 - (|x[i]-x[j]| / h)^3)^3   for each neighbor j.
-    weights <- numeric(length(neighbors))
-    for (j in seq_along(neighbors)) {
-      dist_ij <- D[i, neighbors[j]]
-      weights[j] <- (1 - (dist_ij / h)^3)^3
+    for (j in seq_along(k_nearest_neighbors)) {
+      
+      neighbor_idx <- k_nearest_neighbors[j]
+      
+      weights[j] <- (1 - (D[i, neighbor_idx] / d_max)^3)^3
+      
     }
     
-    # Normalize weights so that they sum to 1.
-    weights <- weights / sum(weights)
+    x_coordinates_in_neighborhood <- x[k_nearest_neighbors]
     
-    # Compute the weighted average of y using the selected neighbors.
-    fitted[i] <- sum(weights * y[neighbors])
+    y_coordinates_in_neighborhood <- y[k_nearest_neighbors]
+    
+    X <- cbind(1, x_coordinates_in_neighborhood)
+    
+    W <- diag(weights)
+    
+    beta_hat <- solve(t(X) %*% W %*% X) %*% t(X) %*% W %*% y_coordinates_in_neighborhood
+    
+    y_hat[i] <- beta_hat[1] + beta_hat[2] * x[i]
+    
   }
   
-  # Return the results as a data frame.
-  result <- data.frame(x = x, fitted = fitted)
+  result <- data.frame(x_obs = x, y_hat_est = y_hat)
+  
   return(result)
 }
-
 ```
 
 ## Question 3:
@@ -167,7 +199,7 @@ plot(x, y,
      cex.axis = 1.2)                          # Increase axis annotation size
 
 # Add the custom LOWESS smoothed curve (in red, solid line)
-lines(result1$x, result1$fitted, 
+lines(result1$x, result1$y_hat, 
       col = "red", 
       lwd = 2)
 

@@ -72,6 +72,14 @@ y_matrix <- cars$dist
 x_matrix <- cbind(1, cars$speed)
 
 linear_reg <- function(x, y) {
+  # A function that generates all the linear regression estimates 
+  #
+  # Args:
+  #   x - the "x" input data set
+  #   y - the observations 
+  #
+  # Return:
+  #   "Beta Estimates:" ; "Estimated Standard Errors:" ; "T-Statistics:" ; "P-Values:" 
   
   num_observations <- nrow(x)
   
@@ -83,9 +91,9 @@ linear_reg <- function(x, y) {
 
   rss <- t(regression_residuals) %*% regression_residuals  
 
-  regression_variance <- as.numeric(rss) / (num_observations - num_variables)  
+  sample_variance <- as.numeric(rss) / (num_observations - num_variables)  
 
-  standard_errors <- sqrt(diag(regression_variance * solve(t(x) %*% x)))  
+  standard_errors <- sqrt(diag(sample_variance * solve(t(x) %*% x)))  
 
   t_stats <- beta_hat / standard_errors  
 
@@ -112,6 +120,7 @@ Check that you get the same β estimates as when fitting the linear regression m
 
 ```{r}
 reg_model <- lm(dist~speed, data = cars)
+
 summary(reg_model)
 ```
 
