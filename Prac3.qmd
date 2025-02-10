@@ -1,59 +1,124 @@
 ---
-title: "Practical 3"
+title: "Practical 3 / Pracical Day 4"
 format: html
 ---
 
 ```{r}
+#| include: false
+
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+  install.packages("tidyverse")
+}
+
+if (!requireNamespace("nycflights13", quietly = TRUE)) {
+  install.packages("nycflights13")
+}
+
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+
+library(remotes)
 library(tidyverse)
 library(nycflights13)
 library(dplyr)
 
+remotes::install_github("SATVILab/UtilsDataRSV")
 ```
 
 ## Question 1:
 
+### Instructions:
+
+Display the `flights` dataset in an alternative format to simply printing it (i.e. running `flights`).
+
+### Answers:
+
 ```{r}
 tibble(flights)
+
+UtilsDataRSV::view_cols(flights)
 ```
 
 ## Question 2:
 
+### Instructions:
+
+Rewrite this code using `dplyr` and the pipe:
+
+```{r}
+flight1 <- flights[flights$month == 1, ]
+carrier_vec <- unique(flight1$carrier)
+carrier_dist_vec_mean <- numeric(length(carrier_vec))
+carrier_dist_vec_sd <- numeric(length(carrier_vec))
+for (i in seq_along(carrier_vec)) {
+  carrier_dist_vec_mean[i] <- mean(
+    flight1$distance[flight1$carrier == carrier_vec[i]]
+   )
+  carrier_dist_vec_sd[i] <- sd(
+    flight1$distance[flight1$carrier == carrier_vec[i]]
+  )
+}
+dist_tbl <- tibble(
+  carrier = carrier_vec,
+  mean_distance = carrier_dist_vec_mean,
+  sd_distance = carrier_dist_vec_sd
+)
+dist_tbl[order(dist_tbl$mean_distance), ]
+```
+
+### Answers:
+
 ```{r}
 
-flight1 <- nycflights13::flights |> 
-  filter(month == 1)
-
-carrier_vec <- flight1 |> 
-  distinct(carrier)
-
-dist_tbl <- flights %>%
-  filter(month == 1) %>%                      # Select only month 1 flights
-  group_by(carrier) %>%  # Group by carrier
+dist_tbl2 <- flights |>
   
-  summarize(
-    mean_distance = mean(distance),  
-    sd_distance   = sd(distance)       
-  ) %>%
-  arrange(mean_distance)                      # Order rows by mean_distance
+  filter(month == 1) |>
+  
+    group_by(carrier) |>  
+  
+      summarize(
+        mean_distance = mean(distance),  
+        sd_distance   = sd(distance)
+        ) |>
+  
+          arrange(mean_distance)                      
 
-dist_tbl
+dist_tbl2
 
 ```
 
 ## Question 3:
 
-The standard deviation is "N.A" for the January carrier only, this is because in order to calculate the standard deviation we need more than one observation and January only has one flight.
+### Instructions:
+
+Explain why the standard deviation is `NA` for one carrier, and why it is `0` for others. Demonstrate your answer using code.
+
+### Answer:
+
+**The standard deviation is N.A for the OO carrier only, this is because in order to calculate the standard deviation we need more than one observation (OO only has one observation distance in January)**.
 
 ```{r}
-# NA Result: Standard deviation cannot be computed for a single observation
+# NA Example using dummy-code: Standard deviation cannot be computed for a single observation
 
 single_obs <- c(100000000000)
 
 sd(single_obs)  
 
+# Analysing why we have NA:
+
+OO_Jan_distances <- flights |>
+  
+  filter(month == 1, carrier == "OO") |>
+  
+    select(carrier, distance)
+
+OO_Jan_distances
+  
+
 ```
 
-The standard deviation is equal to zero where flights have the same distance, this is because there is no variation in the distance
+**The standard deviation is equal to zero for the YV carrier's January distances, this is because there is no variation in the distances.**
 
 ```{r}
 # 0 Result: Standard deviation is 0 when all observations are identical
@@ -62,91 +127,125 @@ identical_obs <- c(1000000, 1000000, 1000000)
 
 sd(identical_obs) 
 
-```
+# Analysing why we have sd = 0
 
-## Question 4:
+YV_Jan_distances <- flights |>
+  
+  filter(month == 1, carrier == "YV") |>
+  
+    select(carrier, distance)
 
-```{r}
-
-avg_dep_delay_df <- flights %>%
-
-  group_by(month, carrier) %>%
-
-  summarise(avg_dep_delay = mean(dep_delay), .groups = "drop") %>%
-
-  pivot_wider(names_from = carrier, values_from = avg_dep_delay)
-
- 
-
-print(avg_dep_delay_df)
+YV_Jan_distances
 
 ```
 
 ## Question 4:
 
-Calculating the Proportion of Flights Delayed on Departure but On-Time on Arrival
+### Instructions:
+
+Using `tidyr` and `dplyr` where appropriate, construct a dataframe where the carriers are along the columns, and the rows are the average departure delay (`dep_delay`) flown by each carrier (`carrier`) in each month.
+
+### Answers:
 
 ```{r}
 
-prop_delayed_on_time_all <- flights %>%
-  summarise(prop = mean(dep_delay > 0 & arr_delay <= 0, na.rm = TRUE))
+avg_dep_delay_df <- flights |>
 
+    group_by(month, carrier) |>
 
-prop_among_delayed <- flights %>%
-  filter(dep_delay > 0) %>%
-  summarise(prop = mean(arr_delay <= 0, na.rm = TRUE))
+      summarise(avg_dep_delay = mean(dep_delay), .groups = "drop") |>
 
-print(prop_delayed_on_time_all)
-print(prop_among_delayed)
+       pivot_wider(names_from = carrier, values_from = avg_dep_delay)
+
+ avg_dep_delay_df
 
 ```
 
 ## Question 5:
 
-### Identify Routes That More Than One Airline Flies
+### Instructions:
+
+Calculate the proportion of flights that were delayed (`dep_delay` greater than 0) but arrived on or before time (`arr_delay` less than or equal to 0).
+
+### Answers:
 
 ```{r}
 
-routes_multiple_airlines <- flights %>%
+total_delayed <- flights |>
+  filter(dep_delay > 0) |>
+  nrow()
 
-  group_by(origin, dest) %>%
+delayed_but_on_time <- flights |>
+  filter(dep_delay > 0,  arr_delay <= 0) |>
+  nrow()
 
-  summarise(num_airlines = n_distinct(carrier), .groups = "drop") %>%
+prop_delayed_but_on_time <- (delayed_but_on_time)/(total_delayed)
 
-  filter(num_airlines > 1)
-
-print(routes_multiple_airlines)
+prop_delayed_but_on_time
 
 ```
 
-### Calculate the Average Arrival Delay for Each Airline on These Routes
+## Question 6:
+
+### Instructions:
+
+Using the `airlines` and `flights` datasets, do the following, showing the output from each step:
+
+-   Identify routes that more than one airline flies
+
+-   For each such route, calculate the average arrival delay for each airline (exclude NAs). Find the names of these airlines.
+
+-   For each such route, identify the airline with the worst and best average arrival delay.
+
+-   Identify the route with the greatest difference between the best and worst performing airlines
+
+-   Determine the reason for this difference
+
+### Answers:
+
+#### Identify Routes That More Than One Airline Flies
 
 ```{r}
 
-route_airline_delays <- flights %>%
+routes_multiple_airlines <- flights |>
 
-  semi_join(routes_multiple_airlines, by = c("origin", "dest")) %>%
+  group_by(origin, dest) |>
 
-  group_by(origin, dest, carrier) %>%
+    summarise(num_airlines = n_distinct(carrier), .groups = "drop") |>
 
-  summarise(avg_arr_delay = mean(arr_delay, na.rm = TRUE), .groups = "drop") %>%
+      filter(num_airlines > 1)
 
-  left_join(airlines, by = "carrier")
-
-
-print(route_airline_delays)
+routes_multiple_airlines
 
 ```
 
-### Identify the Airline with the Worst and Best Average Arrival Delay for Each Route
+#### Calculate the Average Arrival Delay for Each Airline on These Routes
 
 ```{r}
 
-route_best_worst <- route_airline_delays %>%
+route_airline_delays <- flights |>
 
-  group_by(origin, dest) %>%
+  semi_join(routes_multiple_airlines, by = c("origin", "dest")) |>
 
-  summarise(
+    group_by(origin, dest, carrier) |>
+
+      summarise(avg_arr_delay = mean(arr_delay, na.rm = TRUE), .groups = "drop") |>
+
+        left_join(airlines, by = "carrier")
+
+route_airline_delays
+
+```
+
+#### Identify the Airline with the Worst and Best Average Arrival Delay for Each Route
+
+```{r}
+
+route_best_worst <- route_airline_delays |>
+
+  group_by(origin, dest) |>
+
+    summarise(
 
     best_airline = name[which.min(avg_arr_delay)],
 
@@ -160,62 +259,61 @@ route_best_worst <- route_airline_delays %>%
 
   )
 
-print(route_best_worst)
+route_best_worst
 
 ```
 
-### Identify the Route with the Greatest Difference Between the Best and Worst Performing Airlines
+#### Identify the Route with the Greatest Difference Between the Best and Worst Performing Airlines
 
 ```{r}
 
-route_with_max_diff <- route_best_worst %>%
+route_with_max_diff <- route_best_worst |>
 
-  mutate(delay_diff = worst_avg_delay - best_avg_delay) %>%
+  mutate(delay_diff = worst_avg_delay - best_avg_delay) |>
 
-  arrange(desc(delay_diff)) %>%
+    arrange(desc(delay_diff)) |>
 
-  slice(1)
+      slice(1)
 
-
-print(route_with_max_diff)
+route_with_max_diff
 
 ```
 
-### Determine the Reason for This Difference
+#### Determine the Reason for This Difference
 
 ```{r}
 
-investigation <- flights %>%
+investigation <- flights |>
 
   filter(origin == route_with_max_diff$origin,
 
-         dest == route_with_max_diff$dest) %>%
+         dest == route_with_max_diff$dest) |>
 
-  group_by(carrier) %>%
+        group_by(carrier) |>
 
-  summarise(
+          summarise(
 
-    n_flights = n(),
+            n_flights = n(),
+        
+            avg_arr_delay = mean(arr_delay, na.rm = TRUE),
+        
+            avg_dep_delay = mean(dep_delay, na.rm = TRUE),
+        
+            .groups = "drop") |>
 
-    avg_arr_delay = mean(arr_delay, na.rm = TRUE),
+              left_join(airlines, by = "carrier")
 
-    avg_dep_delay = mean(dep_delay, na.rm = TRUE),
-
-    .groups = "drop"
-
-  ) %>%
-
-  left_join(airlines, by = "carrier")
-
- 
-
-print(investigation)
+investigation
 
 ```
 
 ## Question 7:
 
-Identifying Columns with Missing Entries, Typos, and Inconsistencies
+### Instructions: 
+
+Identify all columns with missing entries, typos and any other inconsistencies in the dataset below (load it just by running the code; created using `dput` command, FYI):
+
+### Answers:
 
 ```{r}
 #| echo: false
@@ -295,6 +393,8 @@ question7_df <- structure(
   row.names = c(NA, -50L),
   class = c("tbl_df", "tbl", "data.frame")
 )
+
+UtilsDataRSV::view_cols(question7_df)
 
 missing_summary <- question7_df %>%
   summarize(across(everything(), ~ sum(is.na(.))))

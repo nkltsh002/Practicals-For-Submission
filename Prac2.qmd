@@ -1,7 +1,12 @@
 ---
-title: "Practical 2/Lowess Practical"
+title: "Practical 2 / Lowess Practical"
 format: html
 ---
+
+```{r}
+#| echo: false
+library(graphics)
+```
 
 ## Question 1:
 
@@ -172,7 +177,15 @@ customLowess <- function(x, y, f) {
 
 ## Question 3:
 
-Comparing R's built in Lowess Function to the "customLowess Function" and plotting both the smoothing values for comparison
+### Instructions:
+
+Compare with R’s Built-in `lowess()`:
+
+-   Use the built-in `lowess()` function with the same `f` value. You will also need to set the `iter` argument to 0.
+
+-   Plot both curves to compare their smoothing values.
+
+### Answers:
 
 ```{r}
 # Custom LOWESS (your user-defined function; ensure it is in your workspace)
@@ -184,8 +197,6 @@ result2 <- lowess(x, y, f = 0.3, iter = 0)
 
 ```{r}
 #| echo: false
-
-library(graphics)
 
 plot(x, y,
      main = "LOWESS Smoothing Comparison",  # Title of the plot
