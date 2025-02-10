@@ -4,7 +4,12 @@ format: html
 ---
 
 ## Question 1:
-Finding all the rows with missing values from the "airquality" dataset
+
+### Instructions: 
+
+Find all rows in “airquality” that have missing values. Note that the `airquality` dataset in `R` is always available (just type `airquality` in the console to see it).
+
+### Answer:
 
 ```{r}
 class(airquality)
@@ -16,50 +21,67 @@ airquality_with_missingvalues <<- airquality[
 
 print(airquality_with_missingvalues)
 
-write.csv(airquality_with_missingvalues, file = "_raw_data/dataset.csv") #saving our manipulated data 
+write.csv(airquality_with_missingvalues, file = "_raw_data/airquality_with_missingvalues.csv") #saving our manipulated data 
 ```
 
 ## Question 2:
-Finding mean, sd, min, max for each of temperature and ozone level
+
+### Instructions:
+
+Find mean, sd, min, max for each of temperature and ozone level.
+
+### Answer: 
 
 ```{r}
-airquality_with_missingvalues <- read.csv("_raw_data/dataset.csv")
-  
-ozone_mean <- mean(airquality_with_missingvalues$Ozone, na.rm = TRUE)
+ozone_mean <- mean(airquality$Ozone, na.rm = TRUE)
 ozone_mean
-ozone_sd <- sd(airquality_with_missingvalues$Ozone, na.rm = TRUE)
+
+ozone_sd <- sd(airquality$Ozone, na.rm = TRUE)
 ozone_sd
-ozone_min <- min(airquality_with_missingvalues$Ozone, na.rm = TRUE)
+
+ozone_min <- min(airquality$Ozone, na.rm = TRUE)
 ozone_min
-ozone_max <- max (airquality_with_missingvalues$Ozone, na.rm = TRUE)
+
+ozone_max <- max (airquality$Ozone, na.rm = TRUE)
 ozone_max
   
-temp_mean <- mean(airquality_with_missingvalues$Temp)
+temp_mean <- mean(airquality$Temp)
 temp_mean
-temp_sd <- sd(airquality_with_missingvalues$Temp)
+
+temp_sd <- sd(airquality$Temp)
 temp_sd
-temp_min <- min(airquality_with_missingvalues$Temp)
+
+temp_min <- min(airquality$Temp)
 temp_min
-temp_max <- max(airquality_with_missingvalues$Temp)
+
+temp_max <- max(airquality$Temp)
 temp_max
 ```
 
 ## Question 3:
-Estimating the parameters for linear regression model (distance\~speed) from the cars data set
+
+### Instructions:
+
+For linear regression, parameter estimates can be found as follows. β^=(XTX)−1XTY Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in `R`) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e. find the β estimates, using the equation above, and matrix calcuations in R.
+
+### Answer:
 
 ```{r}
 y_matrix <- cars$dist
+
 x_matrix <- cbind(1, cars$speed)
 
 linear_reg <- function(x, y) {
+  
   num_observations <- nrow(x)
+  
   num_variables <- ncol(x)
 
-  beta_hat <- solve(t(x) %*% x) %*% t(x) %*% y  # beta estimate 
+  beta_hat <- solve(t(x) %*% x) %*% t(x) %*% y   
 
   regression_residuals <- y - x %*% beta_hat
 
-  rss <- t(regression_residuals) %*% regression_residuals  # residual sum of squares
+  rss <- t(regression_residuals) %*% regression_residuals  
 
   regression_variance <- as.numeric(rss) / (num_observations - num_variables)  
 
@@ -70,10 +92,10 @@ linear_reg <- function(x, y) {
   p_vals <- 2 * (1 - pt(abs(t_stats), num_observations - num_variables))
 
   return(list(
-    "beta estimates:" = beta_hat, 
-    "estimate standard errors:" = standard_errors, 
-    "t statistics:" = t_stats, 
-    "P-values:" = p_vals
+    "Beta Estimates:" = beta_hat, 
+    "Estimated Standard Errors:" = standard_errors, 
+    "T-Statistics:" = t_stats, 
+    "P-Values:" = p_vals
   ))
 }
 
@@ -81,10 +103,16 @@ linear_reg(x_matrix, y_matrix)
 ```
 
 ## Question 4:
-Checking the results from questions 3
+
+### Instructions:
+
+Check that you get the same β estimates as when fitting the linear regression model using lm() in R.
+
+### Answers:
 
 ```{r}
 reg_model <- lm(dist~speed, data = cars)
 summary(reg_model)
 ```
 
+**As we can see from the summary output, the linear regression function created in question 3 gives the same estimates as the "lm()" function.**
