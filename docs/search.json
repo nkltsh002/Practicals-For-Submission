@@ -1,0 +1,272 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Course Practicals Book",
+    "section": "",
+    "text": "1 First Peer-Reviewed Hand-In Assignment\nWelcome to your first peer-reviewed assignment for the course. Below you will find the submission brief along with guidelines, rubrics, and FAQs.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#course-mark-contribution",
+    "href": "index.html#course-mark-contribution",
+    "title": "Course Practicals Book",
+    "section": "1.1 1. Course Mark Contribution",
+    "text": "1.1 1. Course Mark Contribution\nThis hand-in counts 2.5% towards your final mark for the course.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#due-date",
+    "href": "index.html#due-date",
+    "title": "Course Practicals Book",
+    "section": "1.2 2. Due Date",
+    "text": "1.2 2. Due Date\nDue Date: Tuesday, 11 February, MIDNIGHT.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#required-practicals",
+    "href": "index.html#required-practicals",
+    "title": "Course Practicals Book",
+    "section": "1.3 3. Required Practicals",
+    "text": "1.3 3. Required Practicals\nThis assignment consists of three practical exercises:\n\nPrac 1: Link to Prac 1\nPrac 2: (uploaded to Amathuba under the Day Two / Three section)\nPractical Day Four: Link to Practical Day Four",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#submission-instructions",
+    "href": "index.html#submission-instructions",
+    "title": "Course Practicals Book",
+    "section": "1.4 4. Submission Instructions",
+    "text": "1.4 4. Submission Instructions\n\nRender Your Quarter Site:\nEnsure your site is correctly generated in the _site (or _book) folder.\nZip the Rendered Site:\nCompress the rendered site into one zip file.\nUpload:\nSubmit the zip file via the assignment page on Amathuba.\nInclude GitHub URL:\nIn your submission, clearly state the URL to your GitHub repository (e.g., github.com/yourusername/yourrepo) where your assignment code can be viewed.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#recommended-format-for-qmd-files",
+    "href": "index.html#recommended-format-for-qmd-files",
+    "title": "Course Practicals Book",
+    "section": "1.5 5. Recommended Format for QMD Files",
+    "text": "1.5 5. Recommended Format for QMD Files\nTo make your submission easy to review: - Use clear headings (#, ##, ###, etc.) to structure your document. - Echo key code chunks with #| echo: true so that the code is visible in the rendered document.\nThis ensures that your peers can quickly navigate your work and assess your code. If your code isn’t visible, it might be marked down.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#rubric-total-100",
+    "href": "index.html#rubric-total-100",
+    "title": "Course Practicals Book",
+    "section": "1.6 6. Rubric (Total: /100)",
+    "text": "1.6 6. Rubric (Total: /100)\n\n1.6.1 6.1 Rendered Quarter Site (/20)\n\nFull (20/20): The rendered document is a Quarto project (i.e., a _site/_book folder).\nPartial (10/20): The practicals are rendered using a literate programming approach (individual Quarto files, RMarkdown files, or a bookdown project) but not as a full Quarto project.\nNone (0/20): The site fails to render.\n\n\n\n1.6.2 6.2 GitHub Repository URL (/20)\n\nFull (20/20): A correct and accessible GitHub URL is provided that contains all the code.\nPartial (10/20): A correct GitHub URL is provided but the code appears incomplete.\nNone (0/20): No GitHub URL is provided or it is completely incorrect/incomplete.\n\n\n\n1.6.3 6.3 Practical Exercises (/20 each)\nFor each practical: - Full (20/20): The practical is completed correctly with all required components. - Partial (10/20): Some components are completed, but there are noticeable issues or omissions. - None (0/20): The practical is not attempted or is entirely incorrect.\n\nNote: Practical Day Four was previously labeled as Practical Day Five, but the numbering was updated.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#faqs",
+    "href": "index.html#faqs",
+    "title": "Course Practicals Book",
+    "section": "1.7 7. FAQs",
+    "text": "1.7 7. FAQs\n\nHow many Git/GitHub repositories are involved?\nOne. Your project should include the following files and folders:\n\n_site/\nprac-day-1.qmd\nprac2.qmd\nprac-day-four.qmd\n_quarto.yml\n\nShould each question in each practical be answered in a separate qmd file?\nNo. All questions for each practical should be answered within a single qmd file.\nI cannot get Quarto projects to work. Can I submit separate rendered HTML files?\nYou can, but you will receive partial marks for that section of the rubric.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#marking-guidelines",
+    "href": "index.html#marking-guidelines",
+    "title": "Course Practicals Book",
+    "section": "1.8 8. Marking Guidelines",
+    "text": "1.8 8. Marking Guidelines\nWe do not expect you to mark each question individually in the practicals. Instead, assess overall correctness and completeness.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#marking-queries",
+    "href": "index.html#marking-queries",
+    "title": "Course Practicals Book",
+    "section": "1.9 9. Marking Queries",
+    "text": "1.9 9. Marking Queries\n\nRemember, this assignment is only worth 2.5% of your final mark.\nIf you have any queries regarding marking, please bring them to our attention for review.\n\n\nGood luck with your assignment submission!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First Peer-Reviewed Hand-In Assignment</span>"
+    ]
+  },
+  {
+    "objectID": "Prac1.html",
+    "href": "Prac1.html",
+    "title": "2  Practical One",
+    "section": "",
+    "text": "2.1 Question 1:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical One</span>"
+    ]
+  },
+  {
+    "objectID": "Prac1.html#question-1",
+    "href": "Prac1.html#question-1",
+    "title": "2  Practical One",
+    "section": "",
+    "text": "2.1.1 Instructions:\nFind all rows in “airquality” that have missing values. Note that the airquality dataset in R is always available (just type airquality in the console to see it).\n\n\n2.1.2 Answer:\n\n\nCode\nclass(airquality)\n\n\n[1] \"data.frame\"\n\n\nCode\nairquality_with_missingvalues &lt;&lt;- airquality[\n  is.na(airquality$Ozone) | is.na(airquality$Solar.R) | \n    is.na(airquality$Wind) | is.na(airquality$Temp) | \n    is.na(airquality$Month) | is.na(airquality$Day),]\n\nprint(airquality_with_missingvalues)\n\n\n    Ozone Solar.R Wind Temp Month Day\n5      NA      NA 14.3   56     5   5\n6      28      NA 14.9   66     5   6\n10     NA     194  8.6   69     5  10\n11      7      NA  6.9   74     5  11\n25     NA      66 16.6   57     5  25\n26     NA     266 14.9   58     5  26\n27     NA      NA  8.0   57     5  27\n32     NA     286  8.6   78     6   1\n33     NA     287  9.7   74     6   2\n34     NA     242 16.1   67     6   3\n35     NA     186  9.2   84     6   4\n36     NA     220  8.6   85     6   5\n37     NA     264 14.3   79     6   6\n39     NA     273  6.9   87     6   8\n42     NA     259 10.9   93     6  11\n43     NA     250  9.2   92     6  12\n45     NA     332 13.8   80     6  14\n46     NA     322 11.5   79     6  15\n52     NA     150  6.3   77     6  21\n53     NA      59  1.7   76     6  22\n54     NA      91  4.6   76     6  23\n55     NA     250  6.3   76     6  24\n56     NA     135  8.0   75     6  25\n57     NA     127  8.0   78     6  26\n58     NA      47 10.3   73     6  27\n59     NA      98 11.5   80     6  28\n60     NA      31 14.9   77     6  29\n61     NA     138  8.0   83     6  30\n65     NA     101 10.9   84     7   4\n72     NA     139  8.6   82     7  11\n75     NA     291 14.9   91     7  14\n83     NA     258  9.7   81     7  22\n84     NA     295 11.5   82     7  23\n96     78      NA  6.9   86     8   4\n97     35      NA  7.4   85     8   5\n98     66      NA  4.6   87     8   6\n102    NA     222  8.6   92     8  10\n103    NA     137 11.5   86     8  11\n107    NA      64 11.5   79     8  15\n115    NA     255 12.6   75     8  23\n119    NA     153  5.7   88     8  27\n150    NA     145 13.2   77     9  27\n\n\nCode\nwrite.csv(airquality_with_missingvalues, file = \"_raw_data/airquality_with_missingvalues.csv\") #saving our manipulated data",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical One</span>"
+    ]
+  },
+  {
+    "objectID": "Prac1.html#question-2",
+    "href": "Prac1.html#question-2",
+    "title": "2  Practical One",
+    "section": "2.2 Question 2:",
+    "text": "2.2 Question 2:\n\n2.2.1 Instructions:\nFind mean, sd, min, max for each of temperature and ozone level.\n\n\n2.2.2 Answer:\n\n\nCode\nozone_mean &lt;- mean(airquality$Ozone, na.rm = TRUE)\nozone_mean\n\n\n[1] 42.12931\n\n\nCode\nozone_sd &lt;- sd(airquality$Ozone, na.rm = TRUE)\nozone_sd\n\n\n[1] 32.98788\n\n\nCode\nozone_min &lt;- min(airquality$Ozone, na.rm = TRUE)\nozone_min\n\n\n[1] 1\n\n\nCode\nozone_max &lt;- max (airquality$Ozone, na.rm = TRUE)\nozone_max\n\n\n[1] 168\n\n\nCode\ntemp_mean &lt;- mean(airquality$Temp)\ntemp_mean\n\n\n[1] 77.88235\n\n\nCode\ntemp_sd &lt;- sd(airquality$Temp)\ntemp_sd\n\n\n[1] 9.46527\n\n\nCode\ntemp_min &lt;- min(airquality$Temp)\ntemp_min\n\n\n[1] 56\n\n\nCode\ntemp_max &lt;- max(airquality$Temp)\ntemp_max\n\n\n[1] 97",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical One</span>"
+    ]
+  },
+  {
+    "objectID": "Prac1.html#question-3",
+    "href": "Prac1.html#question-3",
+    "title": "2  Practical One",
+    "section": "2.3 Question 3:",
+    "text": "2.3 Question 3:\n\n2.3.1 Instructions:\nFor linear regression, parameter estimates can be found as follows. β^=(XTX)−1XTY Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in R) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e. find the β estimates, using the equation above, and matrix calcuations in R.\n\n\n2.3.2 Answer:\n\n\nCode\ny_matrix &lt;- cars$dist\n\nx_matrix &lt;- cbind(1, cars$speed)\n\nlinear_reg &lt;- function(x, y) {\n  # A function that generates all the linear regression estimates \n  #\n  # Args:\n  #   x - the \"x\" input data set\n  #   y - the observations \n  #\n  # Return:\n  #   \"Beta Estimates:\" ; \"Estimated Standard Errors:\" ; \"T-Statistics:\" ; \"P-Values:\" \n  \n  num_observations &lt;- nrow(x)\n  \n  num_variables &lt;- ncol(x)\n\n  beta_hat &lt;- solve(t(x) %*% x) %*% t(x) %*% y   \n\n  regression_residuals &lt;- y - x %*% beta_hat\n\n  rss &lt;- t(regression_residuals) %*% regression_residuals  \n\n  sample_variance &lt;- as.numeric(rss) / (num_observations - num_variables)  \n\n  standard_errors &lt;- sqrt(diag(sample_variance * solve(t(x) %*% x)))  \n\n  t_stats &lt;- beta_hat / standard_errors  \n\n  p_vals &lt;- 2 * (1 - pt(abs(t_stats), num_observations - num_variables))\n\n  return(list(\n    \"Beta Estimates:\" = beta_hat, \n    \"Estimated Standard Errors:\" = standard_errors, \n    \"T-Statistics:\" = t_stats, \n    \"P-Values:\" = p_vals\n  ))\n}\n\nlinear_reg(x_matrix, y_matrix)\n\n\n$`Beta Estimates:`\n           [,1]\n[1,] -17.579095\n[2,]   3.932409\n\n$`Estimated Standard Errors:`\n[1] 6.7584402 0.4155128\n\n$`T-Statistics:`\n          [,1]\n[1,] -2.601058\n[2,]  9.463990\n\n$`P-Values:`\n             [,1]\n[1,] 1.231882e-02\n[2,] 1.489919e-12",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical One</span>"
+    ]
+  },
+  {
+    "objectID": "Prac1.html#question-4",
+    "href": "Prac1.html#question-4",
+    "title": "2  Practical One",
+    "section": "2.4 Question 4:",
+    "text": "2.4 Question 4:\n\n2.4.1 Instructions:\nCheck that you get the same β estimates as when fitting the linear regression model using lm() in R.\n\n\n2.4.2 Answers:\n\n\nCode\nreg_model &lt;- lm(dist~speed, data = cars)\n\nsummary(reg_model)\n\n\n\nCall:\nlm(formula = dist ~ speed, data = cars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-29.069  -9.525  -2.272   9.215  43.201 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -17.5791     6.7584  -2.601   0.0123 *  \nspeed         3.9324     0.4155   9.464 1.49e-12 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 15.38 on 48 degrees of freedom\nMultiple R-squared:  0.6511,    Adjusted R-squared:  0.6438 \nF-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12\n\n\nAs we can see from the summary output, the linear regression function created in question 3 gives the same estimates as the “lm()” function.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Practical One</span>"
+    ]
+  },
+  {
+    "objectID": "Prac2.html",
+    "href": "Prac2.html",
+    "title": "3  Practical 2 / Lowess Practical",
+    "section": "",
+    "text": "3.1 Question 1:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practical 2 / Lowess Practical</span>"
+    ]
+  },
+  {
+    "objectID": "Prac2.html#question-1",
+    "href": "Prac2.html#question-1",
+    "title": "3  Practical 2 / Lowess Practical",
+    "section": "",
+    "text": "3.1.1 Instructions:\nGenerate Simulated Data:\n\nSet your seed to 1, i.e. set.seed(1).\nCreate 𝒙 as a sequence of numbers from 1 to 100.\nGenerate 𝒚 as a noisy sine wave such that:\n𝑦𝑖=sin(𝑥𝑖10)+𝑒𝑖\nwhere ei∼N(0,0.22)\n\n\n\n3.1.2 Answer:\n\n\nCode\nset.seed(1)\n\nx &lt;- (1:100)\n\ny &lt;- integer(100)\n\nerrors &lt;- rnorm(100, mean = 0 , sd = 0.2)\n\ny_function &lt;- function(a, b){\n  # A function that generates all the \"y\" values \n  #\n  # Args:\n  #   a - the \"x\" input value\n  #   b - the \"error term\" associated with that value\n  #\n  # Return:\n  #   y value \n  \n  return(sin(a/10)+b)\n  \n}\n\nfor (i in 1:100) {\n  \n  y[i] &lt;- y_function(x[i], errors[i])\n  \n}\n\nwrite.csv(x, file = \"_raw_data/Prac2_xvalues.csv\") #saving our x\nwrite.csv(y, file = \"_raw_data/Prac2_yvalues.csv\") #saving our y\nwrite.csv(errors, file = \"_raw_data/Prac2_error_values.csv\") #saving our errors",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practical 2 / Lowess Practical</span>"
+    ]
+  },
+  {
+    "objectID": "Prac2.html#question-2",
+    "href": "Prac2.html#question-2",
+    "title": "3  Practical 2 / Lowess Practical",
+    "section": "3.2 Question 2:",
+    "text": "3.2 Question 2:\n\n3.2.1 Instructions:\nImplement the LOWESS Algorithm:\n\nDefine a function customLowess(x, y, f) that returns the smoothed values.\n\n\n\n3.2.2 Answer:\n\n\nCode\npairwise_distance &lt;- function(x) {\n  # Computes a matrix of absolute differences between x–values.\n  #\n  # Args:\n  #   x - A numeric vector.\n  #\n  # Returns:\n  #   A symmetric matrix D where D[i, j] = |x[i] - x[j]|.\n  \n  num_obs &lt;- length(x)\n  \n  D &lt;- matrix(0, num_obs, num_obs)  # Initialize an n x n matrix\n  \n  for (i in 1:num_obs) {\n    \n    for (j in 1:num_obs) {\n      \n      D[i, j] &lt;- abs(x[i] - x[j])\n      \n    }\n    \n  }\n  \n  return(D)\n}\n\n\nfind_k_nearest &lt;- function(i, D, k) {\n  # Finds the indices of the k nearest neighbors (excluding the point itself)\n  # for the i-th observation based on the distance matrix D.\n  #\n  # Args:\n  #   i - Index of the targeted observation.\n  #   D - The symmetric matrix difference D .\n  #   k - The number of neighbors to select.\n  #\n  # Returns:\n  #   A vector of indices corresponding to the k nearest neighbors of x[i].\n  \n  row_distances &lt;- D[i, ]\n  \n  ordered_indices &lt;- order(row_distances)\n  \n  nearest_indices &lt;- ordered_indices[2:(k + 1)]    # The first index is i itself (distance = 0), so we take the next k indices.\n  \n  return(nearest_indices)\n}\n \n\ncustomLowess &lt;- function(x, y, f) {\n  # Performs LOWESS smoothing on (x, y) data using a fixed fraction f of neighbors.\n  #\n  # Args:\n  #   x - Numeric vector of independent variable values.\n  #   y - Numeric vector of dependent variable values.\n  #   f - Fraction (span) of points to use for local regression (default is 0.3).\n  #\n  # Returns:\n  #   A data frame with the original x values and the corresponding smoothed y_hat values.\n  \n  num_obs &lt;- length(x)\n  \n  k &lt;- ceiling(f * num_obs)  \n  \n  D &lt;- pairwise_distance(x)\n  \n  y_hat &lt;- numeric(num_obs)  # Initialize vector to hold the y_hat (smoothed) y values.\n  \n  for (i in 1:num_obs) {\n   \n    k_nearest_neighbors &lt;- find_k_nearest(i, D, k)\n\n    d_max &lt;- max(D[i, (k_nearest_neighbors)])\n    \n    weights &lt;- numeric(length(k_nearest_neighbors))   # Initialize vector to hold the weights\n    \n    for (j in seq_along(k_nearest_neighbors)) {\n      \n      neighbor_idx &lt;- k_nearest_neighbors[j]\n      \n      weights[j] &lt;- (1 - (D[i, neighbor_idx] / d_max)^3)^3\n      \n    }\n    \n    x_coordinates_in_neighborhood &lt;- x[k_nearest_neighbors]\n    \n    y_coordinates_in_neighborhood &lt;- y[k_nearest_neighbors]\n    \n    X &lt;- cbind(1, x_coordinates_in_neighborhood)\n    \n    W &lt;- diag(weights)\n    \n    beta_hat &lt;- solve(t(X) %*% W %*% X) %*% t(X) %*% W %*% y_coordinates_in_neighborhood\n    \n    y_hat[i] &lt;- beta_hat[1] + beta_hat[2] * x[i]\n    \n  }\n  \n  result &lt;- data.frame(x_obs = x, y_hat_est = y_hat)\n  \n  return(result)\n}",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practical 2 / Lowess Practical</span>"
+    ]
+  },
+  {
+    "objectID": "Prac2.html#question-3",
+    "href": "Prac2.html#question-3",
+    "title": "3  Practical 2 / Lowess Practical",
+    "section": "3.3 Question 3:",
+    "text": "3.3 Question 3:\n\n3.3.1 Instructions:\nCompare with R’s Built-in lowess():\n\nUse the built-in lowess() function with the same f value. You will also need to set the iter argument to 0.\nPlot both curves to compare their smoothing values.\n\n\n\n3.3.2 Answers:\n\n\nCode\n# Custom LOWESS (your user-defined function; ensure it is in your workspace)\nresult1 &lt;- customLowess(x, y, f = 0.3)\n\n# Built-in lowess from R (note: iter = 0 means no robust iterations)\nresult2 &lt;- lowess(x, y, f = 0.3, iter = 0)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practical 2 / Lowess Practical</span>"
+    ]
+  },
+  {
+    "objectID": "Prac3.html",
+    "href": "Prac3.html",
+    "title": "4  Practical 3 / Pracical Day 4",
+    "section": "",
+    "text": "4.1 Question 1:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical 3 / Pracical Day 4</span>"
+    ]
+  },
+  {
+    "objectID": "Prac3.html#question-1",
+    "href": "Prac3.html#question-1",
+    "title": "4  Practical 3 / Pracical Day 4",
+    "section": "",
+    "text": "4.1.1 Instructions:\nDisplay the flights dataset in an alternative format to simply printing it (i.e. running flights).\n\n\n4.1.2 Answers:\n\n\nCode\ntibble(flights)\n\n\n# A tibble: 336,776 × 19\n    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n 1  2013     1     1      517            515         2      830            819\n 2  2013     1     1      533            529         4      850            830\n 3  2013     1     1      542            540         2      923            850\n 4  2013     1     1      544            545        -1     1004           1022\n 5  2013     1     1      554            600        -6      812            837\n 6  2013     1     1      554            558        -4      740            728\n 7  2013     1     1      555            600        -5      913            854\n 8  2013     1     1      557            600        -3      709            723\n 9  2013     1     1      557            600        -3      838            846\n10  2013     1     1      558            600        -2      753            745\n# ℹ 336,766 more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;\n\n\nCode\nUtilsDataRSV::view_cols(flights)\n\n\n[1] \"year\"\n[1] 410\n[1] \"_____________________\"\n[1] \"month\"\n[1] 11  8  4  1  6\n[1] \"_____________________\"\n[1] \"day\"\n[1] 21 25 22 14 20\n[1] \"_____________________\"\n[1] \"dep_time\"\n[1] 1342  707  710 2000   NA\n[1] \"_____________________\"\n[1] \"sched_dep_time\"\n[1]  603  944 1848 1441  755\n[1] \"_____________________\"\n[1] \"dep_delay\"\n[1]  53 911 103 261  NA\n[1] \"_____________________\"\n[1] \"arr_time\"\n[1] 1506 2230 1907  139   NA\n[1] \"_____________________\"\n[1] \"sched_arr_time\"\n[1]  720 1001  827 1523 1624\n[1] \"_____________________\"\n[1] \"arr_delay\"\n[1]  81 123 367   4  NA\n[1] \"_____________________\"\n[1] \"carrier\"\n [1] \"AS\" \"HA\" \"FL\" \"B6\" \"MQ\" \"EV\" \"DL\" \"OO\" \"AA\" \"YV\" \"WN\" \"9E\" \"UA\" \"US\" \"VX\"\n[16] \"F9\"\n[1] \"_____________________\"\n[1] \"flight\"\n[1] 4692 4225 4422  199 3824\n[1] \"_____________________\"\n[1] \"tailnum\"\n [1] \"N493UA\" \"N386AA\" \"N657UA\" \"N175DN\" \"N7CAAA\" \"N57111\" \"N903DA\" \"N3758Y\"\n [9] \"N811UA\" \"N600LR\" \"N724MQ\" \"N385DN\" \"N183UW\" \"N318AT\" \"N912DL\" \"N695DL\"\n[17] \"N8886A\" \"N13718\" \"N7AYAA\" NA      \n[1] \"4024 unique entries not displayed\"\n[1] \"_____________________\"\n[1] \"origin\"\n[1] \"LGA\" \"JFK\" \"EWR\"\n[1] \"_____________________\"\n[1] \"dest\"\n [1] \"OKC\" \"SBN\" \"MYR\" \"BOS\" \"SFO\" \"PVD\" \"MEM\" \"BUF\" \"TUL\" \"SMF\" \"ROC\" \"CRW\"\n[13] \"MCI\" \"HNL\" \"DSM\" \"CLE\" \"RSW\" \"MTJ\" \"DTW\" \"XNA\"\n[1] \"85 unique entries not displayed\"\n[1] \"_____________________\"\n[1] \"air_time\"\n[1] 640 267  99 288  NA\n[1] \"_____________________\"\n[1] \"distance\"\n[1] 2378 1726  416  500 1023\n[1] \"_____________________\"\n[1] \"hour\"\n[1]  5  6 17 18 19\n[1] \"_____________________\"\n[1] \"minute\"\n[1] 43 44 50 25 13\n[1] \"_____________________\"\n[1] \"time_hour\"\n [1] \"2013-02-25 11:00:00 EST\" \"2013-06-06 09:00:00 EDT\"\n [3] \"2013-11-15 12:00:00 EST\" \"2013-05-01 10:00:00 EDT\"\n [5] \"2013-05-30 23:00:00 EDT\" \"2013-05-07 08:00:00 EDT\"\n [7] \"2013-07-06 11:00:00 EDT\" \"2013-06-24 17:00:00 EDT\"\n [9] \"2013-01-23 14:00:00 EST\" \"2013-01-18 07:00:00 EST\"\n[11] \"2013-11-05 21:00:00 EST\" \"2013-01-19 06:00:00 EST\"\n[13] \"2013-08-04 12:00:00 EDT\" \"2013-01-27 05:00:00 EST\"\n[15] \"2013-02-03 17:00:00 EST\" \"2013-09-22 22:00:00 EDT\"\n[17] \"2013-08-13 09:00:00 EDT\" \"2013-07-04 19:00:00 EDT\"\n[19] \"2013-11-16 22:00:00 EST\" \"2013-11-05 20:00:00 EST\"\n[1] \"6916 unique entries not displayed\"\n[1] \"_____________________\"\n\n\nWarning: Not all unique entries displayed for these non-numeric cols: tailnum,\ndest, time_hour",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical 3 / Pracical Day 4</span>"
+    ]
+  },
+  {
+    "objectID": "Prac3.html#question-2",
+    "href": "Prac3.html#question-2",
+    "title": "4  Practical 3 / Pracical Day 4",
+    "section": "4.2 Question 2:",
+    "text": "4.2 Question 2:\n\n4.2.1 Instructions:\nRewrite this code using dplyr and the pipe:\n\n\nCode\nflight1 &lt;- flights[flights$month == 1, ]\ncarrier_vec &lt;- unique(flight1$carrier)\ncarrier_dist_vec_mean &lt;- numeric(length(carrier_vec))\ncarrier_dist_vec_sd &lt;- numeric(length(carrier_vec))\nfor (i in seq_along(carrier_vec)) {\n  carrier_dist_vec_mean[i] &lt;- mean(\n    flight1$distance[flight1$carrier == carrier_vec[i]]\n   )\n  carrier_dist_vec_sd[i] &lt;- sd(\n    flight1$distance[flight1$carrier == carrier_vec[i]]\n  )\n}\ndist_tbl &lt;- tibble(\n  carrier = carrier_vec,\n  mean_distance = carrier_dist_vec_mean,\n  sd_distance = carrier_dist_vec_sd\n)\ndist_tbl[order(dist_tbl$mean_distance), ]\n\n\n# A tibble: 16 × 3\n   carrier mean_distance sd_distance\n   &lt;chr&gt;           &lt;dbl&gt;       &lt;dbl&gt;\n 1 YV               229          0  \n 2 9E               476.       334. \n 3 EV               522.       294. \n 4 US               536.       553. \n 5 MQ               566.       223. \n 6 FL               691.       142. \n 7 OO               733         NA  \n 8 WN               942.       496. \n 9 B6              1062.       681. \n10 DL              1220.       644. \n11 AA              1350.       626. \n12 UA              1462.       778. \n13 F9              1620          0  \n14 AS              2402          0  \n15 VX              2495.        98.2\n16 HA              4983          0  \n\n\n\n\n4.2.2 Answers:\n\n\nCode\ndist_tbl2 &lt;- flights |&gt;\n  \n  filter(month == 1) |&gt;\n  \n    group_by(carrier) |&gt;  \n  \n      summarize(\n        mean_distance = mean(distance),  \n        sd_distance   = sd(distance)\n        ) |&gt;\n  \n          arrange(mean_distance)                      \n\ndist_tbl2\n\n\n# A tibble: 16 × 3\n   carrier mean_distance sd_distance\n   &lt;chr&gt;           &lt;dbl&gt;       &lt;dbl&gt;\n 1 YV               229          0  \n 2 9E               476.       334. \n 3 EV               522.       294. \n 4 US               536.       553. \n 5 MQ               566.       223. \n 6 FL               691.       142. \n 7 OO               733         NA  \n 8 WN               942.       496. \n 9 B6              1062.       681. \n10 DL              1220.       644. \n11 AA              1350.       626. \n12 UA              1462.       778. \n13 F9              1620          0  \n14 AS              2402          0  \n15 VX              2495.        98.2\n16 HA              4983          0",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical 3 / Pracical Day 4</span>"
+    ]
+  },
+  {
+    "objectID": "Prac3.html#question-3",
+    "href": "Prac3.html#question-3",
+    "title": "4  Practical 3 / Pracical Day 4",
+    "section": "4.3 Question 3:",
+    "text": "4.3 Question 3:\n\n4.3.1 Instructions:\nExplain why the standard deviation is NA for one carrier, and why it is 0 for others. Demonstrate your answer using code.\n\n\n4.3.2 Answer:\nThe standard deviation is N.A for the OO carrier only, this is because in order to calculate the standard deviation we need more than one observation (OO only has one observation distance in January).\n\n\nCode\n# NA Example using dummy-code: Standard deviation cannot be computed for a single observation\n\nsingle_obs &lt;- c(100000000000)\n\nsd(single_obs)  \n\n\n[1] NA\n\n\nCode\n# Analysing why we have NA:\n\nOO_Jan_distances &lt;- flights |&gt;\n  \n  filter(month == 1, carrier == \"OO\") |&gt;\n  \n    select(carrier, distance)\n\nOO_Jan_distances\n\n\n# A tibble: 1 × 2\n  carrier distance\n  &lt;chr&gt;      &lt;dbl&gt;\n1 OO           733\n\n\nThe standard deviation is equal to zero for the YV carrier’s January distances, this is because there is no variation in the distances.\n\n\nCode\n# 0 Result: Standard deviation is 0 when all observations are identical\n\nidentical_obs &lt;- c(1000000, 1000000, 1000000)\n\nsd(identical_obs) \n\n\n[1] 0\n\n\nCode\n# Analysing why we have sd = 0\n\nYV_Jan_distances &lt;- flights |&gt;\n  \n  filter(month == 1, carrier == \"YV\") |&gt;\n  \n    select(carrier, distance)\n\nYV_Jan_distances\n\n\n# A tibble: 46 × 2\n   carrier distance\n   &lt;chr&gt;      &lt;dbl&gt;\n 1 YV           229\n 2 YV           229\n 3 YV           229\n 4 YV           229\n 5 YV           229\n 6 YV           229\n 7 YV           229\n 8 YV           229\n 9 YV           229\n10 YV           229\n# ℹ 36 more rows",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical 3 / Pracical Day 4</span>"
+    ]
+  },
+  {
+    "objectID": "Prac3.html#question-4",
+    "href": "Prac3.html#question-4",
+    "title": "4  Practical 3 / Pracical Day 4",
+    "section": "4.4 Question 4:",
+    "text": "4.4 Question 4:\n\n4.4.1 Instructions:\nUsing tidyr and dplyr where appropriate, construct a dataframe where the carriers are along the columns, and the rows are the average departure delay (dep_delay) flown by each carrier (carrier) in each month.\n\n\n4.4.2 Answers:\n\n\nCode\navg_dep_delay_df &lt;- flights |&gt;\n\n    group_by(month, carrier) |&gt;\n\n      summarise(avg_dep_delay = mean(dep_delay), .groups = \"drop\") |&gt;\n\n       pivot_wider(names_from = carrier, values_from = avg_dep_delay)\n\n avg_dep_delay_df\n\n\n# A tibble: 12 × 17\n   month  `9E`    AA     AS    B6    DL    EV    F9    FL    HA    MQ    OO\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     1    NA    NA  7.35     NA    NA    NA 10     NA   54.4     NA  67  \n 2     2    NA    NA NA        NA    NA    NA NA     NA   17.4     NA  NA  \n 3     3    NA    NA  8.42     NA    NA    NA 16.8   NA    1.16    NA  NA  \n 4     4    NA    NA 11.3      NA    NA    NA 24.6   NA   -2.1     NA  NA  \n 5     5    NA    NA  6.77     NA    NA    NA 35.9   NA   -1.45    NA  NA  \n 6     6    NA    NA 13.1      NA    NA    NA 29.4   NA    1.47    NA  61  \n 7     7    NA    NA  2.42     NA    NA    NA 31.8   NA   -1.71    NA  NA  \n 8     8    NA    NA  2.87     NA    NA    NA 22.2   NA    1.68    NA  64  \n 9     9    NA    NA -4.52     NA    NA    NA NA     NA   -5.44    NA  NA  \n10    10    NA    NA  0.677    NA    NA    NA  9.70  NA   -5.10    NA  NA  \n11    11    NA    NA  3.08     NA    NA    NA NA     16.9 -5.44    NA   0.8\n12    12    NA    NA 18.0      NA    NA    NA 13.1   NA   -3.14    NA  NA  \n# ℹ 5 more variables: UA &lt;dbl&gt;, US &lt;dbl&gt;, VX &lt;dbl&gt;, WN &lt;dbl&gt;, YV &lt;dbl&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical 3 / Pracical Day 4</span>"
+    ]
+  },
+  {
+    "objectID": "Prac3.html#question-5",
+    "href": "Prac3.html#question-5",
+    "title": "4  Practical 3 / Pracical Day 4",
+    "section": "4.5 Question 5:",
+    "text": "4.5 Question 5:\n\n4.5.1 Instructions:\nCalculate the proportion of flights that were delayed (dep_delay greater than 0) but arrived on or before time (arr_delay less than or equal to 0).\n\n\n4.5.2 Answers:\n\n\nCode\ntotal_delayed &lt;- flights |&gt;\n  filter(dep_delay &gt; 0) |&gt;\n  nrow()\n\ndelayed_but_on_time &lt;- flights |&gt;\n  filter(dep_delay &gt; 0,  arr_delay &lt;= 0) |&gt;\n  nrow()\n\nprop_delayed_but_on_time &lt;- (delayed_but_on_time)/(total_delayed)\n\nprop_delayed_but_on_time\n\n\n[1] 0.2759593",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical 3 / Pracical Day 4</span>"
+    ]
+  },
+  {
+    "objectID": "Prac3.html#question-6",
+    "href": "Prac3.html#question-6",
+    "title": "4  Practical 3 / Pracical Day 4",
+    "section": "4.6 Question 6:",
+    "text": "4.6 Question 6:\n\n4.6.1 Instructions:\nUsing the airlines and flights datasets, do the following, showing the output from each step:\n\nIdentify routes that more than one airline flies\nFor each such route, calculate the average arrival delay for each airline (exclude NAs). Find the names of these airlines.\nFor each such route, identify the airline with the worst and best average arrival delay.\nIdentify the route with the greatest difference between the best and worst performing airlines\nDetermine the reason for this difference\n\n\n\n4.6.2 Answers:\n\n4.6.2.1 Identify Routes That More Than One Airline Flies\n\n\nCode\nroutes_multiple_airlines &lt;- flights |&gt;\n\n  group_by(origin, dest) |&gt;\n\n    summarise(num_airlines = n_distinct(carrier), .groups = \"drop\") |&gt;\n\n      filter(num_airlines &gt; 1)\n\nroutes_multiple_airlines\n\n\n# A tibble: 128 × 3\n   origin dest  num_airlines\n   &lt;chr&gt;  &lt;chr&gt;        &lt;int&gt;\n 1 EWR    ATL              4\n 2 EWR    AUS              2\n 3 EWR    BDL              2\n 4 EWR    BNA              2\n 5 EWR    BOS              3\n 6 EWR    BWI              2\n 7 EWR    CHS              2\n 8 EWR    CLE              2\n 9 EWR    CLT              3\n10 EWR    CVG              2\n# ℹ 118 more rows\n\n\n\n\n4.6.2.2 Calculate the Average Arrival Delay for Each Airline on These Routes\n\n\nCode\nroute_airline_delays &lt;- flights |&gt;\n\n  semi_join(routes_multiple_airlines, by = c(\"origin\", \"dest\")) |&gt;\n\n    group_by(origin, dest, carrier) |&gt;\n\n      summarise(avg_arr_delay = mean(arr_delay, na.rm = TRUE), .groups = \"drop\") |&gt;\n\n        left_join(airlines, by = \"carrier\")\n\nroute_airline_delays\n\n\n# A tibble: 343 × 5\n   origin dest  carrier avg_arr_delay name                    \n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt;                   \n 1 EWR    ATL   9E              -6.25 Endeavor Air Inc.       \n 2 EWR    ATL   DL              10.0  Delta Air Lines Inc.    \n 3 EWR    ATL   EV              19.5  ExpressJet Airlines Inc.\n 4 EWR    ATL   UA              10.5  United Air Lines Inc.   \n 5 EWR    AUS   UA               4.28 United Air Lines Inc.   \n 6 EWR    AUS   WN             -11.2  Southwest Airlines Co.  \n 7 EWR    BDL   EV               6.78 ExpressJet Airlines Inc.\n 8 EWR    BDL   UA              22.6  United Air Lines Inc.   \n 9 EWR    BNA   EV              17.7  ExpressJet Airlines Inc.\n10 EWR    BNA   WN              -2.13 Southwest Airlines Co.  \n# ℹ 333 more rows\n\n\n\n\n4.6.2.3 Identify the Airline with the Worst and Best Average Arrival Delay for Each Route\n\n\nCode\nroute_best_worst &lt;- route_airline_delays |&gt;\n\n  group_by(origin, dest) |&gt;\n\n    summarise(\n\n    best_airline = name[which.min(avg_arr_delay)],\n\n    worst_airline = name[which.max(avg_arr_delay)],\n\n    best_avg_delay = min(avg_arr_delay, na.rm = TRUE),\n\n    worst_avg_delay = max(avg_arr_delay, na.rm = TRUE),\n\n    .groups = \"drop\"\n\n  )\n\nroute_best_worst\n\n\n# A tibble: 128 × 6\n   origin dest  best_airline        worst_airline best_avg_delay worst_avg_delay\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;               &lt;chr&gt;                  &lt;dbl&gt;           &lt;dbl&gt;\n 1 EWR    ATL   Endeavor Air Inc.   ExpressJet A…         -6.25            19.5 \n 2 EWR    AUS   Southwest Airlines… United Air L…        -11.2              4.28\n 3 EWR    BDL   ExpressJet Airline… United Air L…          6.78            22.6 \n 4 EWR    BNA   Southwest Airlines… ExpressJet A…         -2.13            17.7 \n 5 EWR    BOS   ExpressJet Airline… JetBlue Airw…         -4.01             6.87\n 6 EWR    BWI   Southwest Airlines… ExpressJet A…          5.95            20.1 \n 7 EWR    CHS   United Air Lines I… ExpressJet A…        -14               16.2 \n 8 EWR    CLE   ExpressJet Airline… United Air L…         -3.71             5.97\n 9 EWR    CLT   US Airways Inc.     ExpressJet A…          0.920           20.5 \n10 EWR    CVG   Endeavor Air Inc.   ExpressJet A…          1.40            21.2 \n# ℹ 118 more rows\n\n\n\n\n4.6.2.4 Identify the Route with the Greatest Difference Between the Best and Worst Performing Airlines\n\n\nCode\nroute_with_max_diff &lt;- route_best_worst |&gt;\n\n  mutate(delay_diff = worst_avg_delay - best_avg_delay) |&gt;\n\n    arrange(desc(delay_diff)) |&gt;\n\n      slice(1)\n\nroute_with_max_diff\n\n\n# A tibble: 1 × 7\n  origin dest  best_airline      worst_airline    best_avg_delay worst_avg_delay\n  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;                     &lt;dbl&gt;           &lt;dbl&gt;\n1 JFK    ATL   Endeavor Air Inc. ExpressJet Airl…           1.40             128\n# ℹ 1 more variable: delay_diff &lt;dbl&gt;\n\n\n\n\n4.6.2.5 Determine the Reason for This Difference\n\n\nCode\ninvestigation &lt;- flights |&gt;\n\n  filter(origin == route_with_max_diff$origin,\n\n         dest == route_with_max_diff$dest) |&gt;\n\n        group_by(carrier) |&gt;\n\n          summarise(\n\n            n_flights = n(),\n        \n            avg_arr_delay = mean(arr_delay, na.rm = TRUE),\n        \n            avg_dep_delay = mean(dep_delay, na.rm = TRUE),\n        \n            .groups = \"drop\") |&gt;\n\n              left_join(airlines, by = \"carrier\")\n\ninvestigation\n\n\n# A tibble: 3 × 5\n  carrier n_flights avg_arr_delay avg_dep_delay name                    \n  &lt;chr&gt;       &lt;int&gt;         &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;                   \n1 9E             55          1.40          1.47 Endeavor Air Inc.       \n2 DL           1874          6.34         10.7  Delta Air Lines Inc.    \n3 EV              1        128           124    ExpressJet Airlines Inc.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical 3 / Pracical Day 4</span>"
+    ]
+  },
+  {
+    "objectID": "Prac3.html#question-7",
+    "href": "Prac3.html#question-7",
+    "title": "4  Practical 3 / Pracical Day 4",
+    "section": "4.7 Question 7:",
+    "text": "4.7 Question 7:\n\n4.7.1 Instructions:\nIdentify all columns with missing entries, typos and any other inconsistencies in the dataset below (load it just by running the code; created using dput command, FYI):\n\n\n4.7.2 Answers:\n\n\n[1] \"id\"\n [1] \"id_24\" \"id_19\" \"id_34\" \"id_37\" \"id_6\"  \"id_41\" \"id_17\" \"id_14\" \"id_32\"\n[10] \"id_23\" \"id_35\" \"id_7\"  \"id_9\"  \"id_39\" \"id_50\" \"id_44\" \"id_1\"  \"id_10\"\n[19] \"id_5\"  \"id_48\"\n[1] \"30 unique entries not displayed\"\n[1] \"_____________________\"\n[1] \"age\"\n[1] 46 76 60 33 27\n[1] \"_____________________\"\n[1] \"gender\"\n[1] \"female\" \"male\"   \"femal\" \n[1] \"_____________________\"\n[1] \"height\"\n[1] 165.4 157.7 157.4 197.4    NA\n[1] \"_____________________\"\n[1] \"weight\"\n[1] 68.7 95.7 67.8 83.0 99.3\n[1] \"_____________________\"\n[1] \"blood_type\"\n[1] \"AB\" \"A\"  \"B\"  \"O\" \n[1] \"_____________________\"\n[1] \"disease_status\"\n[1] \"healthy\"  \"Healthy\"  \"diseased\"\n[1] \"_____________________\"\n[1] \"cholesterol\"\n[1] 199 189 235 196 250\n[1] \"_____________________\"\n[1] \"glucose\"\n[1] 96 91 71 94 NA\n[1] \"_____________________\"\n[1] \"smoker\"\n[1] \"yes\" \"no\" \n[1] \"_____________________\"\n[1] \"exercise\"\n[1] \"none\"       \"occasional\" \"regular\"   \n[1] \"_____________________\"\n[1] \"income\"\n[1] 86851 68275 88295 57315 91326\n[1] \"_____________________\"\n[1] \"education\"\n[1] \"highschool\" \"PhD\"        \"bachelor\"   \"master\"    \n[1] \"_____________________\"\n[1] \"region\"\n[1] \"East\"  \"North\" \"West\"  \"South\"\n[1] \"_____________________\"\n[1] \"marital_status\"\n[1] \"single\"   \"widowed\"  \"divorced\" \"married\" \n[1] \"_____________________\"\n\n\nWarning: Not all unique entries displayed for these non-numeric cols: id\n\n\n[1] \"Missing values by column:\"\n\n\n# A tibble: 1 × 15\n     id   age gender height weight blood_type disease_status cholesterol glucose\n  &lt;int&gt; &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;      &lt;int&gt;          &lt;int&gt;       &lt;int&gt;   &lt;int&gt;\n1     0     0      0      2      0          0              0           0       3\n# ℹ 6 more variables: smoker &lt;int&gt;, exercise &lt;int&gt;, income &lt;int&gt;,\n#   education &lt;int&gt;, region &lt;int&gt;, marital_status &lt;int&gt;\n\n\n[1] \"Gender counts:\"\n\n\n# A tibble: 3 × 2\n  gender     n\n  &lt;chr&gt;  &lt;int&gt;\n1 femal      1\n2 female    22\n3 male      27\n\n\n[1] \"Disease status counts:\"\n\n\n# A tibble: 3 × 2\n  disease_status     n\n  &lt;chr&gt;          &lt;int&gt;\n1 Healthy            1\n2 diseased          19\n3 healthy           30\n\n\n[1] \"Blood type counts:\"\n\n\n# A tibble: 4 × 2\n  blood_type     n\n  &lt;chr&gt;      &lt;int&gt;\n1 A             14\n2 AB             7\n3 B             10\n4 O             19\n\n\n[1] \"Smoker counts:\"\n\n\n# A tibble: 2 × 2\n  smoker     n\n  &lt;chr&gt;  &lt;int&gt;\n1 no        23\n2 yes       27\n\n\n[1] \"Exercise counts:\"\n\n\n# A tibble: 3 × 2\n  exercise       n\n  &lt;chr&gt;      &lt;int&gt;\n1 none          16\n2 occasional    19\n3 regular       15\n\n\n[1] \"Education counts:\"\n\n\n# A tibble: 4 × 2\n  education      n\n  &lt;chr&gt;      &lt;int&gt;\n1 PhD           12\n2 bachelor      12\n3 highschool    13\n4 master        13\n\n\n[1] \"Region counts:\"\n\n\n# A tibble: 4 × 2\n  region     n\n  &lt;chr&gt;  &lt;int&gt;\n1 East       9\n2 North     16\n3 South      9\n4 West      16\n\n\n[1] \"Marital status counts:\"\n\n\n# A tibble: 4 × 2\n  marital_status     n\n  &lt;chr&gt;          &lt;int&gt;\n1 divorced          15\n2 married           12\n3 single            11\n4 widowed           12",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practical 3 / Pracical Day 4</span>"
+    ]
+  }
+]
