@@ -1,5 +1,37 @@
 project:
   title: "Practicals For Submission"
+  type: book
+  render: 
+    - index.qmd
+    - Prac1.qmd
+    - Prac2.qmd
+    - Prac3.qmd
+  output-dir: "docs" 
 
+book:
+  title: "Course Practicals Book"
+  author: "Tshwanelo Nkalanga"
+  description: "First-handin practical exercises for the course."
+  sidebar:
+    border: true
+    background: light
+    position: right
+  chapters:
+    - index.qmd
+    - Prac1.qmd
+    - Prac2.qmd
+    - Prac3.qmd
 
-
+format:
+  html:
+    theme: cosmo             # A modern, attractive Bootstrap theme
+    toc: true                # Enable a table of contents
+    toc-depth: 4             # Display headings up to level 2 in the TOC
+    number-sections: true     # Automatically number sections for easy reference
+    code-fold: true          # Allow code chunks to be collapsed/expanded
+    self-contained: true      # Package all resources into single HTML files
+    navbar:
+      right:
+        - icon: github
+          text: "GitHub Repository"
+          href: "https://github.com/nkltsh002/Practicals-For-Submission"
