@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Practical 2/Lowess Practical</title>
+<title>Practical 2 / Lowess Practical</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Practical 2/Lowess Practical</h1>
+<h1 class="title">Practical 2 / Lowess Practical</h1>
 </div>
 
 
@@ -236,8 +236,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="fu">seq_along</span>(k_nearest_neighbors)) {</span>
 <span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Use the proper neighbor index for weight calculation.</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>      neighbor_idx <span class="ot">&lt;-</span> k_nearest_neighbors[j]</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>      neighbor_idx <span class="ot">&lt;-</span> k_nearest_neighbors[j]</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>      </span>
 <span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>      weights[j] <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> (D[i, neighbor_idx] <span class="sc">/</span> d_max)<span class="sc">^</span><span class="dv">3</span>)<span class="sc">^</span><span class="dv">3</span></span>
 <span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>      </span>
 <span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    }</span>
@@ -265,7 +265,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3:</h2>
-<p>Comparing R’s built in Lowess Function to the “customLowess Function” and plotting both the smoothing values for comparison</p>
+<section id="instructions-2" class="level3">
+<h3 class="anchored" data-anchor-id="instructions-2">Instructions:</h3>
+<p>Compare with R’s Built-in <code>lowess()</code>:</p>
+<ul>
+<li><p>Use the built-in <code>lowess()</code> function with the same <code>f</code> value. You will also need to set the <code>iter</code> argument to 0.</p></li>
+<li><p>Plot both curves to compare their smoothing values.</p></li>
+</ul>
+</section>
+<section id="answers" class="level3">
+<h3 class="anchored" data-anchor-id="answers">Answers:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom LOWESS (your user-defined function; ensure it is in your workspace)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>result1 <span class="ot">&lt;-</span> <span class="fu">customLowess</span>(x, y, <span class="at">f =</span> <span class="fl">0.3</span>)</span>
@@ -277,11 +286,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Prac2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Prac2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+</section>
 </section>
 
 </main>

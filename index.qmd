@@ -1,30 +1,96 @@
 ---
-title: "Practicals For Submission"
+title: "First Peer-Reviewed Hand-In Assignment"
+date: "2025-02-11"
 author: "Tshwanelo Nkalanga"
+format: html
 ---
 
-# Practical One:
+# First Peer-Reviewed Hand-In Assignment
 
-## Instructions
+Welcome to your first peer-reviewed assignment for the course. Below you will find the submission brief along with guidelines, rubrics, and FAQs.
 
-The answers to the following questions should be placed into their own QMD files in a Quarto project on GitHub.
+## 1. Course Mark Contribution
 
-## Contents
+This hand-in counts **2.5%** towards your final mark for the course.
 
--   **Question 1: Handling Missing Values**
+## 2. Due Date
 
-    -   Find all rows in the `airquality` dataset that have missing values.
+**Due Date:** Tuesday, **11 February, MIDNIGHT**.
 
--   **Question 2: Descriptive Statistics**
+## 3. Required Practicals
 
-    -   Compute mean, standard deviation, minimum, and maximum for temperature and ozone levels in `airquality`.
+This assignment consists of three practical exercises:
 
--   **Question 3:** **Matrix Calculations**
+-   **Prac 1:** [Link to Prac 1](#)
+-   **Prac 2:** (uploaded to Amathuba under the Day Two / Three section)
+-   **Practical Day Four:** [Link to Practical Day Four](#)
 
-    -   Calculating the beta estimates, t-statistic, and p-value for a linear regression fitted with the `cars` data set
+## 4. Submission Instructions
 
--   **Question 4: Linear Regression**
+1.  **Render Your Quarter Site:**\
+    Ensure your site is correctly generated in the `_site` (or `_book`) folder.
 
-    -   Fit a simple linear regression model to the `cars` data set
+2.  **Zip the Rendered Site:**\
+    Compress the rendered site into one zip file.
 
-    -   Compare the estimates with those obtained from question 3.
+3.  **Upload:**\
+    Submit the zip file via the assignment page on Amathuba.
+
+4.  **Include GitHub URL:**\
+    In your submission, clearly state the URL to your GitHub repository (e.g., `github.com/yourusername/yourrepo`) where your assignment code can be viewed.
+
+## 5. Recommended Format for QMD Files
+
+To make your submission easy to review: - Use clear headings (`#`, `##`, `###`, etc.) to structure your document. - Echo key code chunks with `#| echo: true` so that the code is visible in the rendered document.
+
+This ensures that your peers can quickly navigate your work and assess your code. If your code isn’t visible, it might be marked down.
+
+## 6. Rubric (Total: /100)
+
+### 6.1 Rendered Quarter Site (/20)
+
+-   **Full (20/20):** The rendered document is a Quarto project (i.e., a `_site`/`_book` folder).
+-   **Partial (10/20):** The practicals are rendered using a literate programming approach (individual Quarto files, RMarkdown files, or a bookdown project) but not as a full Quarto project.
+-   **None (0/20):** The site fails to render.
+
+### 6.2 GitHub Repository URL (/20)
+
+-   **Full (20/20):** A correct and accessible GitHub URL is provided that contains all the code.
+-   **Partial (10/20):** A correct GitHub URL is provided but the code appears incomplete.
+-   **None (0/20):** No GitHub URL is provided or it is completely incorrect/incomplete.
+
+### 6.3 Practical Exercises (/20 each)
+
+For each practical: - **Full (20/20):** The practical is completed correctly with all required components. - **Partial (10/20):** Some components are completed, but there are noticeable issues or omissions. - **None (0/20):** The practical is not attempted or is entirely incorrect.
+
+> **Note:** Practical Day Four was previously labeled as Practical Day Five, but the numbering was updated.
+
+## 7. FAQs
+
+-   **How many Git/GitHub repositories are involved?**\
+    One. Your project should include the following files and folders:
+
+    -   `_site/`
+    -   `prac-day-1.qmd`
+    -   `prac2.qmd`
+    -   `prac-day-four.qmd`
+    -   `_quarto.yml`
+
+-   **Should each question in each practical be answered in a separate qmd file?**\
+    No. All questions for each practical should be answered within a single qmd file.
+
+-   **I cannot get Quarto projects to work. Can I submit separate rendered HTML files?**\
+    You can, but you will receive partial marks for that section of the rubric.
+
+## 8. Marking Guidelines
+
+We do not expect you to mark each question individually in the practicals. Instead, assess overall correctness and completeness.
+
+## 9. Marking Queries
+
+-   Remember, this assignment is only worth **2.5%** of your final mark.
+-   If you have any queries regarding marking, please bring them to our attention for review.
+
+------------------------------------------------------------------------
+
+Good luck with your assignment submission!
